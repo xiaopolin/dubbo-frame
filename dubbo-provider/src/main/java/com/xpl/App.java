@@ -12,9 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @SpringBootApplication
 public class App {
-
     public static void main(String[] args) {
         ApplicationContext ac = SpringApplication.run(App.class, args);
     }
-
 }
