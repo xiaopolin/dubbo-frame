@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /dubbo-consumer
+  port: 8073
+
+spring:
+  application:
+    name: dubbo-consumer
+  servlet:
+    multipart:
+      max-file-size: 5242880
+      max-request-size: 5242880
+
+

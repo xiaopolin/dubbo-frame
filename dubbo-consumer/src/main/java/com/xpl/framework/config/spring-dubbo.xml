@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 当前服务名称，不要和别的服务重名 -->
+    <dubbo:application name="dubbo-consumer"/>
+    <!-- 注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.0.192:2181"/>
+    <!-- 通信规则 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 配置优先级：高->低 ：高优先级配置将覆盖低优先级配置 -->
+    <!-- 消费者方法->生产者方法->消费者->生产者->全局消费者->全局生产者 -->
+    <!-- 配置全局消费者的消费规则 -->
+    <dubbo:consumer check="false" timeout="1000" retries="1" />
+
+    <!-- 注入消费者接口，若不标注id，接口将无法注入框架 -->
+    <dubbo:reference id="userInfoDubbo" interface="com.xpl.dubbo.UserInfoDubbo" />
+
+    <!-- 以下消费者采用的是直连的方式调用生产者，注意url填写的是dubboAdmin中查询到的IP-->
+    <dubbo:reference id="animalInfoDubbo" interface="com.xpl.dubbo.AnimalInfoDubbo" url="dubbo://169.254.226.102:20880" />
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 当前服务名称，不要和别的服务重名 -->
+    <dubbo:application name="dubbo-provider"/>
+    <!-- 注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.0.192:2181"/>
+    <!-- 通信规则 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <bean id="userInfoDubboImpl" class="com.xpl.dubbo.dubboImpl.UserInfoDubboImpl"/>
+    <dubbo:service interface="com.xpl.dubbo.UserInfoDubbo" ref="userInfoDubboImpl" />
+
+    <bean id="animalInfoDubboImpl" class="com.xpl.dubbo.dubboImpl.AnimalInfoDubboImpl" />
+    <dubbo:service interface="com.xpl.dubbo.AnimalInfoDubbo" ref="animalInfoDubboImpl" />
+
+</beans>

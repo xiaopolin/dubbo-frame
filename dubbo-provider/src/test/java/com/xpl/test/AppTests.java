@@ -1,0 +1,70 @@
+package com.xpl.test;
+
+import com.xpl.api.po.UserInfoPO;
+import com.xpl.framework.util.RedisUtil;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.*;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class AppTests {
+
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private RedisTemplate redisTemplate;
+    @Autowired
+    private RedisUtil redisUtil;
+
+
+
+    @Test
+    public void contextLoads() throws SQLException {
+        System.out.println(dataSource.getConnection());
+    }
+
+    @Test
+    public void testRedis(){
+        UserInfoPO userInfoPO = new UserInfoPO();
+//        redisTemplate.opsForValue().set("b", userInfoPO);
+
+        Map<String , Object> map = new HashMap<>();
+        map.put("1", userInfoPO);
+        map.put("2", userInfoPO);
+        map.put("3", userInfoPO);
+
+        //long add = redisTemplate.opsForSet().add("e", 123, 321);
+        List<String> list = new ArrayList<>();
+        list.add("8");
+        list.add("7");
+        list.add("6");
+        Object z = redisUtil.sAdd("p", "1", "2", "3");
+
+
+
+        System.out.println("flag:" + z);
+
+
+
+
+    }
+
+    @Test
+    public void testBitSet(){
+        redisTemplate.opsForValue().setBit("testBit1",  9, false);
+        //Boolean a = redisTemplate.opsForValue().bitField("login.20180906",  102400000);
+        //System.out.println(2%2);
+    }
+
+
+
+
+}
