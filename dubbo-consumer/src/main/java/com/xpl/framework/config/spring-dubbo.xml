@@ -23,7 +23,7 @@
     <!-- 注入消费者接口，若不标注id，接口将无法注入框架 -->
     <dubbo:reference id="userInfoDubbo" interface="com.xpl.dubbo.UserInfoDubbo" />
 
-    <!-- 以下消费者采用的是直连的方式调用生产者，注意url填写的是dubboAdmin中查询到的IP-->
+    <!-- 以下消费者采用的是直连的方式调用生产者，注意url填写的是dubboAdmin中查询到的IP -->
     <dubbo:reference id="animalInfoDubbo" interface="com.xpl.dubbo.AnimalInfoDubbo" url="dubbo://169.254.226.102:20880" />
 
 </beans>
