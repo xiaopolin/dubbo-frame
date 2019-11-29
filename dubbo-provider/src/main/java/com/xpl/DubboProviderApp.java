@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan(basePackages = "com.xpl.dao")
 @EnableTransactionManagement
 @SpringBootApplication
-public class App {
+public class DubboProviderApp {
     public static void main(String[] args) {
-        ApplicationContext ac = SpringApplication.run(App.class, args);
+        ApplicationContext ac = SpringApplication.run(DubboProviderApp.class, args);
     }
 }

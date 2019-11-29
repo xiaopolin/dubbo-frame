@@ -1,6 +1,6 @@
 package com.xpl.dubbo;
 
-import com.xpl.api.po.UserInfoPO;
+import com.xpl.entity.po.UserInfoPO;
 
 public class UserInfoDubboMock implements UserInfoDubbo {
 

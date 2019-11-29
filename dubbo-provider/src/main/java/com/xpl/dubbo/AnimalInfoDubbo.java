@@ -1,6 +1,6 @@
 package com.xpl.dubbo;
 
-import com.xpl.api.po.AnimalInfoPO;
+import com.xpl.entity.po.AnimalInfoPO;
 
 public interface AnimalInfoDubbo {
 

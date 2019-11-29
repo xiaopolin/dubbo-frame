@@ -1,9 +1,8 @@
 package com.xpl.web.controller;
 
-import com.xpl.api.po.AnimalInfoPO;
-import com.xpl.api.po.UserInfoPO;
-import com.xpl.api.constant.ErrorCodeConstant;
-import com.xpl.dubbo.UserInfoDubbo;
+import com.xpl.entity.po.AnimalInfoPO;
+import com.xpl.entity.po.UserInfoPO;
+import com.xpl.entity.constant.ErrorCodeConstant;
 import com.xpl.framework.ResultView;
 import com.xpl.service.AnimalInfoService;
 import com.xpl.service.UserInfoService;

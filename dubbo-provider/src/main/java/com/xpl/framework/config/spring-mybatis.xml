@@ -15,7 +15,7 @@
 
     <!-- 重命名mybaties映射时的实体类 -->
     <typeAliases>
-        <typeAlias type="com.xpl.api.po.UserInfoPO" alias="UserInfoPO"/>
-        <typeAlias type="com.xpl.api.po.AnimalInfoPO" alias="AnimalInfoPO"/>
+        <typeAlias type="com.xpl.entity.po.UserInfoPO" alias="UserInfoPO"/>
+        <typeAlias type="com.xpl.entity.po.AnimalInfoPO" alias="AnimalInfoPO"/>
     </typeAliases>
 </configuration>

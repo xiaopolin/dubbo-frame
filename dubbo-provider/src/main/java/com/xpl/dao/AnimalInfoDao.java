@@ -1,6 +1,6 @@
 package com.xpl.dao;
 
-import com.xpl.api.po.AnimalInfoPO;
+import com.xpl.entity.po.AnimalInfoPO;
 import org.apache.ibatis.annotations.Param;
 
 public interface AnimalInfoDao {

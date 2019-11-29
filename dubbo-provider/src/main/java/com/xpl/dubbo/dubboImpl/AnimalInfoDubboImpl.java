@@ -1,6 +1,6 @@
 package com.xpl.dubbo.dubboImpl;
 
-import com.xpl.api.po.AnimalInfoPO;
+import com.xpl.entity.po.AnimalInfoPO;
 import com.xpl.dao.AnimalInfoDao;
 import com.xpl.dubbo.AnimalInfoDubbo;
 import org.springframework.beans.factory.annotation.Autowired;

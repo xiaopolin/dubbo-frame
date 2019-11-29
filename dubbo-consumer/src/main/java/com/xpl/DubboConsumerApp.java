@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ImportResource(value = {"classpath:com/xpl/framework/config/spring-dubbo.xml"})
 @EnableTransactionManagement
 @SpringBootApplication
-public class App {
+public class DubboConsumerApp {
 
     public static void main(String[] args) {
-        ApplicationContext ac = SpringApplication.run(App.class, args);
+        ApplicationContext ac = SpringApplication.run(DubboConsumerApp.class, args);
         //随项目启动的方法
         ac.getBean(com.xpl.web.timer.SystemTimer.class).speak();
     }

@@ -1,6 +1,6 @@
 package com.xpl.test;
 
-import com.xpl.api.po.UserInfoPO;
+import com.xpl.entity.po.UserInfoPO;
 import com.xpl.framework.util.RedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
