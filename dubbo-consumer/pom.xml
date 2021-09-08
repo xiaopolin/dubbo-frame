@@ -15,7 +15,7 @@
     <description>Frame project for Dubbo</description>
 
     <properties>
-        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo.version>2.7.13</dubbo.version>
 
         <java.version>1.8</java.version>
         <start-class>com.xpl.DubboConsumerApp</start-class>
